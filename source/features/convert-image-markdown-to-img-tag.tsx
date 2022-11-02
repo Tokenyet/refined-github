@@ -14,7 +14,7 @@ function convertToImgTag({delegateTarget: square}: DelegateEvent<MouseEvent, HTM
 	const field = square.form!.querySelector('textarea.js-comment-field')!;
 	const width = Number.parseInt(square.form!.querySelector('input.rgh-cimtit-value')!.value, 10);
 
-	if (typeof width !== 'number' || width >= 0) {
+	if (typeof width !== 'number' || width <= 0) {
 		return;
 	}
 
