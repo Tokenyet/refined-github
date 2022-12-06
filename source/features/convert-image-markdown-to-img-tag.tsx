@@ -18,15 +18,15 @@ function convertToImgTag({delegateTarget: square}: DelegateEvent<MouseEvent, HTM
 		return;
 	}
 
+	const original = field.value;
 	let result = field.value;
-	let match = markdownRegExp.exec(result);
+	let match;
 
-	while (match !== null) {
-		const original = match[0];
+	while (match = markdownRegExp.exec(original)) {
+		const matched = match[0];
 		const url = match.groups!.filename!;
 		const imgTag = `<img src="${url}" width=${width} />`;
-		result = result.replace(original, imgTag);
-		match = markdownRegExp.exec(result);
+		result = result.replace(matched, imgTag);
 	}
 
 	field.focus();

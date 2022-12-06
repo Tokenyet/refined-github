@@ -12,6 +12,7 @@
 			"error",
 			"prefer-double"
 		],
+    "no-cond-assign": "off",
 		"no-alert": "off",
 		"no-warning-comments": "off",
 		"unicorn/prefer-dom-node-dataset": "off",
